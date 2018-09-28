@@ -13,6 +13,7 @@
     if($txtArticulo === ""){
       $errores[] = "No se puede analizar el texto vacío!";
     }
+    // Para Evaluar si paso todas las validaciones
     if(count($errores) == 0 ){
       $txtArticulo = preg_replace('/[^A-Za-z0-9\s]/','', $txtArticulo);
       $arrayPalabras = explode(" ", $txtArticulo);
