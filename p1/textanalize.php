@@ -1,4 +1,9 @@
 <?php
+    /** Esto es un ejemplo de como usar arreglos
+   * asociativos y ordinales para determinar la
+   * frecuencia de uso de palabras en un texto
+   * ingresado por el usuario.
+   */
   $txtArticulo = "";
   $errores = array();
   $arrayFrecuencias = array();
