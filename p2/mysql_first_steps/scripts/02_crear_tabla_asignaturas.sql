@@ -1,0 +1,5 @@
+CREATE TABLE `nw201803`.`asignaturas` (
+  `asgcod` BIGINT(18) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `asgnom` VARCHAR(128) NOT NULL,
+  `asgest` CHAR(3) NOT NULL DEFAULT 'WRK',
+  PRIMARY KEY (`asgcod`));
