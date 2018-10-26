@@ -88,7 +88,7 @@ if($mode != "UPD"){
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="hover">
         <?php foreach($asignaturas as $asignatura) { ?>
         <tr>
           <td><?php echo $asignatura["asgcod"];?></td>
@@ -111,8 +111,11 @@ if($mode != "UPD"){
     </table>
     <hr />
   <?php } //end !mode upd ?>
+
+    <form class="card depth-3"
+    style="width:40%; min-width:380px; margin:1em auto;padding:2em;"
+    action="mysql_first.php" method="post">
     <h1>Asignatura</h1>
-    <form class="card" action="mysql_first.php" method="post">
       <?php
         if ($mode == "UPD") {
           ?>
@@ -121,19 +124,24 @@ if($mode != "UPD"){
         <?php
         }
        ?>
-      <label for="txtNom">Asignatura</label>
+       <div class="row">
+      <label class="col-4" for="txtNom">Asignatura</label>
       <input type="text" id="txtNom" name="txtNom"
+      class="col-8"
       placeholder="Nombre de la Asignatura"
       value="<?php echo $txtNom; ?>" />
+      </div>
       <br />
-      <label for="cmbEstado">Estado</label>
-      <select name="cmbEstado" id="cmbEstado">
+      <div class="row">
+      <label class="col-4" for="cmbEstado">Estado</label>
+      <select class="col-8" name="cmbEstado" id="cmbEstado">
         <option value="ACT" <?php echo ($cmbEstado=="ACT")?"selected":"";?>>Activo</option>
         <option value="INA" <?php echo ($cmbEstado=="INA")?"selected":"";?>>Inactivo</option>
         <option value="WRK" <?php echo ($cmbEstado=="WRK")?"selected":"";?>>En Proceso</option>
       </select>
+      </div>
       <br />
-
+      <div style="text-align:right">
       <?php if( $mode !="UPD") { ?>
       <input type="submit" value="Guardar" name="btnIngresar"
       id="btnIngresar" class="bg-green" />
@@ -141,6 +149,7 @@ if($mode != "UPD"){
       <input type="submit" value="Actualizar" name="btnActualizar"
       id="btnActualizar" class="bg-green" />
     <?php } ?>
+    </div>
     </form>
   </body>
 </html>
